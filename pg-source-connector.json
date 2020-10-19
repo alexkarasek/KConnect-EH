@@ -1,0 +1,14 @@
+{
+    "name": "todo-connector",
+    "config": {
+        "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+        "database.hostname": "postgrescdc01.postgres.database.azure.com",
+        "database.port": "5432",
+        "database.user": "dbadmin@postgrescdc01",
+        "database.password": "P1a2s3w4o5r6d7",
+        "database.dbname": "postgres",
+        "database.server.name": "postgrescdc01",
+        "plugin.name": "wal2json",
+        "table.whitelist": "public.todos"
+    }
+}
