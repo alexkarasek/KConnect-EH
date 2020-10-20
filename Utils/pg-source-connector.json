@@ -8,7 +8,6 @@
         "database.password": "P1a2s3w4o5r6d7",
         "database.dbname": "postgres",
         "database.server.name": "postgrescdc01",
-        "plugin.name": "wal2json",
-        "table.whitelist": "public.todos"
+        "plugin.name": "wal2json"
     }
 }

@@ -31,14 +31,18 @@ RUN tar -xzf debezium-connector-postgres-1.2.5.Final-plugin.tar.gz && \
 CMD ["./kafka_2.13-2.6.0/bin/connect-distributed.sh" ,"./connect-distributed.properties"]
 
 # docker build . -t kafkaconnect-eh
-# docker run -it --name kafkaconnect-eh -p 8083:8083  kafkaconnect-eh
+# 
 # curl -X POST -H "Content-Type: application/json" --data @pg-source-connector.json http://localhost:8083/connectors
 
 # Tag before pushing to azure
 # docker tag kafkaconnect-eh akcr01.azurecr.io/kafkaconnect-eh
 
+# login to azure
+# az acr login --name akcr01 OR
+# docker login akcr01.azurecr.io 
+
 # push to acr
-# ocker push akcr01.azurecr.io/kafkaconnect-eh
+# docker push akcr01.azurecr.io/kafkaconnect-eh
 
 # Get full name (used for deplyment)
 # az acr show --name akcr01 --query loginServer
